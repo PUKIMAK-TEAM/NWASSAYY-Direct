@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Loading...</title>
+  <script>
+    /*!
+     * GeoIP Target Redirector
+     * Project: https://github.com/OpenAff/geoip-target-filter
+     *
+     * ---------------------------------------------------------------------
+     * A small snippet for geo-target redirection using GeoIP API.
+     * Add your targeted country's "ISO 3166-1 - Alpha-2" code and
+     * redirect URL to the "target" array object.
+     * ---------------------------------------------------------------------
+     * Example:
+     *          target.All = "http://others.tld";
+     *          target.US  = "http://domain.tld";
+     *
+     * The above example will redirect all the US visitors to the given URL.
+     * And any non-targeted visitors to "All" URL.
+     * ---------------------------------------------------------------------
+     * Country Codes can be found @( Wikipedia - http://bit.ly/nWBMYz )
+     * See Column: "Alpha-2 Code"
+     * ---------------------------------------------------------------------
+     */
+
+        var target = []; // Create a new target Array.
+
+        // Example Codes:
+        target.All = "https://dcbaggc.postsmlink.com/s/19c4ecc3bad74?subsource=MEOW&track=MEOW&ext_click_id=MEOW"; // Redirects Non-targeted / all other visitors to this URL.
+		target.ID  = "index.html?MEOW";
+	    target.AD = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.AE = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.AG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.AM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.AO = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.AZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BB = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BD = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BF = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BH = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BJ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BS = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BT = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BW = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.BZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.CM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.CN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.CR = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.CV = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.DJ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.DM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.DZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.EG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.ER = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.ET = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.FM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.GA = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.GD = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.GH = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.GM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.GN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.GQ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.GW = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.HN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.HT = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.IN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.IQ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.IR = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.JM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.JO = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KE = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KH = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KI = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KW = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.KZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.LA = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.LB = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.LC = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.LK = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.LS = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.LU = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MA = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MC = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MD = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.ME = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MH = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MK = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.ML = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MR = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MT = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MU = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MV = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MW = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MY = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.MZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.NA = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.NE = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.NG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.NP = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.NR = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.OM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.PA = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.PG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.PH = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.PK = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.PS = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.PW = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.PY = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.QA = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.RS = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.RW = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SA = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SB = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SC = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SL = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SR = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.ST = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SV = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.SZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TD = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TH = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TJ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TN = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TO = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TR = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TT = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TV = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.TZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.UG = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.UZ = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.VU = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+        target.ZM = "https://dcbaggc.postclikc.com/c/daa36186d0c3f?subsource=INACTIVE";
+	    target.AD = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.AE = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.AG = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.AM = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BB = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BD = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BF = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BJ = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BN = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BS = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BT = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BW = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.BZ = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.CV = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.DM = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.ER = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.FM = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.GA = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.GD = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.GM = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.GN = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.GQ = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.GW = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.HT = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.JO = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.KI = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.KM = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.KN = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.LA = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.LC = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.LS = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.ME = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MG = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MH = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MN = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MR = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MT = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MV = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MW = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.MZ = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.NA = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.NE = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.NR = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.PG = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.PW = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.PY = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.RW = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.SB = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.SC = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.SL = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.SM = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.SR = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.ST = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.SZ = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.TD = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.TM = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.TO = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.TV = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+        target.UG = "https://dcbaggc.directoffrs.com/c/621a38160c53e?subsource=INACTIVE";
+	  
+    // Redirects DE Visitors to this URL.
+
+        // ------------------------------------------------------
+        // DON'T EDIT THE BELOW CODE UNLESS REQUIRED
+        // ------------------------------------------------------
+        /**
+         * If a valid country code matches the targets list, then it redirects to that particular link.
+         * Otherwise redirects to "All" target URL.
+         */
+        function geoip(g){window.top.location.href=target[g.country]||target.All}
+  </script>
+  <script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
+</head>
+</html>
